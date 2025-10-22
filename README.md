@@ -54,7 +54,80 @@ void loop() {
 
 Por meio das informações exibidas no monitor, é possível observar o processo de carga e descarga do capacitor ao longo do tempo, permitindo analisar o comportamento do circuito RC e compreender sua função como filtro.
 
-##  Conclusão
+### Evidências
+
+Vídeo Demonstração: 
+
+[Vídeo Capacitor](https://youtu.be/hOUjMogX8hgQ)
+
+
+### A análise
+
+&emsp;No Google Colab, foi implementado um código para processar os dados coletados e transformá-los em uma representação visual por meio de gráficos, facilitando a interpretação e a análise dos resultados.
+
+### Código Utilizado
+
+```cpp
+import matplotlib.pyplot as plt
+# Meus dados
+dados = [
+   (401, 3.34, 1.66),
+(803, 2.24, 2.76),
+(1205, 1.50, 3.50),
+(1607, 1.00, 4.00),
+(2010, 0.67, 4.33),
+(2412, 0.45, 4.55),
+(2813, 0.30, 4.70),
+(3216, 0.20, 4.80),
+(3618, 0.14, 4.86),
+(4021, 0.09, 4.91),
+(4423, 0.06, 4.94),
+(4825, 0.04, 4.96),
+(5227, 0.03, 4.97),
+(5629, 0.02, 4.98),
+(6032, 0.01, 4.99),
+(6433, 0.01, 4.99),
+(6836, 0.00, 5.00),
+(7238, 0.00, 5.00),
+(7641, 0.00, 5.00),
+(8043, 0.00, 5.00),
+(8444, 0.00, 5.00),
+(8847, 0.00, 5.00),
+
+]
+
+# Separando os dados
+x = [item[0] for item in dados]
+y1 = [item[1] for item in dados]
+y2 = [item[2] for item in dados]
+
+# Criando o gráfico
+plt.figure(figsize=(10, 6))
+plt.plot(x, y1, label='Y1')
+plt.plot(x, y2, label='Y2')
+# Configurando rótulos e título
+plt.xlabel('X')
+plt.ylabel('Valores')
+plt.title('Gráfico de Dispersão')
+plt.legend()
+# Exibindo o gráfico
+plt.grid(True)
+plt.show()
+```
+### Gráfico Obtido
+
+<div align="center">
+<sub>Imagem 02: Gráfico Gerado.</sub>
+</div>
+<div align="center">
+<img src="assets/imagens/grafico.png">
+</div>
+
+<div align="center">
+<sub>Fonte: Imagem autoral, 2025.</sub>
+</div>
+
+###  Conclusão
 &emsp;A realização do experimento permitiu compreender, na prática, o comportamento de um circuito RC e a forma como ocorre o processo de carga e descarga do capacitor ao longo do tempo. A partir dos dados coletados pelo Arduino, foi possível observar a variação da tensão no capacitor e no resistor, verificando a resposta característica exponencial do sistema.
 
 Além de reforçar os conceitos teóricos de eletrônica, a atividade também possibilitou aplicar programação básica para aquisição e análise de dados, integrando conhecimentos de hardware e software em um mesmo experimento. Essa integração mostrou-se essencial para entender como circuitos simples podem ser utilizados em aplicações reais de filtragem e temporização.
